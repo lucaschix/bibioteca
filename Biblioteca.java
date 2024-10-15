@@ -1,74 +1,83 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Biblioteca {
 
 	private String nombre;
 	private String direccion;
-	private ArrayList<Libro> libros;
-	private ArrayList<Empleado> empleados;
-	private ArrayList<Categoria> categorias;
+	private List<Libro> libros;
+	private List<Empleado> empleados;
+	private List<Categoria> categorias;
 
-	public Biblioteca(){
+	public Biblioteca() {
 		this.libros = new ArrayList<>();
 		this.empleados = new ArrayList<>();
 		this.categorias = new ArrayList<>();
 	}
+
 	public String getNombre() {
 		return this.nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
 	public String getDireccion() {
 		return this.direccion;
 	}
+
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
-	public ArrayList<Libro> getLibros() { return libros; }
-	public void setLibros(ArrayList<Libro> libros) {
+
+	public List<Libro> getLibros() {
+		return libros;
+	}
+
+	public void setLibros(List<Libro> libros) {
 		this.libros = libros;
 	}
-	public ArrayList<Empleado> getEmpleados() {
+
+	public List<Empleado> getEmpleados() {
 		return empleados;
 	}
-	public void setEmpleados(ArrayList<Empleado> empleados) {
+
+	public void setEmpleados(List<Empleado> empleados) {
 		this.empleados = empleados;
 	}
-	public ArrayList<Categoria> getCategorias() {
+
+	public List<Categoria> getCategorias() {
 		return categorias;
 	}
-	public void setCategorias(ArrayList<Categoria> categorias) {
+
+	public void setCategorias(List<Categoria> categorias) {
 		this.categorias = categorias;
 	}
 
 	public void agregarLibro(Libro libro) {
 		libros.add(libro);
-		System.out.println("Su libro se agrego, este fue: " + libro.getLibros());
+		System.out.println("El bibliotecario agrego un libro");
 	}
 
-	public void modificarLibro(Libro libro, String nuevoNombre, String nuevoAutor, int nuevoISBN, int nuevoAnio) {
-		libro.setLibro(nuevoNombre);
+	public void modificarLibro(Libro libro, String nuevoNombre, String nuevoAutor, int nuevoISBN) {
+		libro.setTitulo(nuevoNombre);
 		libro.setAutor(nuevoAutor);
 		libro.setISBN(nuevoISBN);
-		libro.setYearPublicacion(nuevoAnio);
-		System.out.println("El libro de modifico, nuevo libro: " + libro.getLibro());
+		System.out.println("Felicidades modificaste un libro, ahora nadie sabe como buscarlo si no es el bibliotecario, nuevo libro: " + libro.getTitulo());
 	}
 
 	public void eliminarLibro(Libro libro) {
 		libros.remove(libro);
-		System.out.println("El libro se uso para el fuego, adios: " + libro.getLibro());
+		System.out.println("Libro eliminado (el libro fue cambiado de forma ilegal por un trabajador de la ufro a cambio de un completo y una Cristal), nombre del libro: " + libro.getTitulo()); // Assuming Libro class has a getTitulo method
 	}
 
 	public Libro obtenerLibroDisponible(String nombreLibro) {
 		for (Libro libro : libros) {
-			if (libro.getLibro().equals(nombreLibro)) {
+			if (libro.getTitulo().equals(nombreLibro)) {
 				return libro;
 			}
 		}
 		return null;
 	}
-
 }

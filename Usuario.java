@@ -15,8 +15,6 @@ public class Usuario {
 	public String getNombre() {
 		return this.nombre;
 	}
-
-
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
@@ -24,8 +22,6 @@ public class Usuario {
 	public String getIdentificacion() {
 		return this.identificacion;
 	}
-
-
 	public void setIdentificacion(String identificacion) {
 		this.identificacion = identificacion;
 	}
@@ -33,7 +29,6 @@ public class Usuario {
 	private List<Prestamo> getPrestamos() {
 		return prestamos;
 	}
-
 	private void agregarPrestamo(Prestamo prestamo) {
 		prestamos.add(prestamo);
 	}

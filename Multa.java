@@ -4,15 +4,17 @@ public class Multa {
 	private int fecha;
 	private String estado;
 	private Prestamo prestamo;
+	public Multa(int monto, Prestamo prestamo, int fecha, String estado) {
+		this.monto = monto;
+		this.prestamo = prestamo;
+		this.fecha= fecha;
+		this.estado=estado;
+
+	}
 
 	public int getMonto() {
 		return this.monto;
 	}
-
-	/**
-	 * 
-	 * @param monto
-	 */
 	public void setMonto(int monto) {
 		this.monto = monto;
 	}
@@ -20,11 +22,6 @@ public class Multa {
 	public int getFecha() {
 		return this.fecha;
 	}
-
-	/**
-	 * 
-	 * @param fecha
-	 */
 	public void setFecha(int fecha) {
 		this.fecha = fecha;
 	}
@@ -32,13 +29,21 @@ public class Multa {
 	public String getEstado() {
 		return this.estado;
 	}
-
-	/**
-	 * 
-	 * @param estado
-	 */
 	public void setEstado(String estado) {
 		this.estado = estado;
+	}
+
+	public Prestamo getPrestamo() {
+		return prestamo;
+	}
+	public void setPrestamo(Prestamo prestamo) {
+		this.prestamo = prestamo;
+	}
+
+	public void pagarMulta(){
+		this.estado="pagada";
+		System.out.println("Multa pagada.");
+
 	}
 
 }

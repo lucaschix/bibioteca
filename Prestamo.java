@@ -1,7 +1,7 @@
 public class Prestamo {
 
-	private int Fecha_prestamo;
-	private int Fecha_entrega;
+	private int fecha_prestamo;
+	private int fecha_entrega;
 	private Usuario usuario;
 	private Libro libro;
 
@@ -10,13 +10,9 @@ public class Prestamo {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param Fecha_prestamo
-	 */
-	public void setFecha_prestamo(int Fecha_prestamo) {
-		// TODO - implement Prestamo.setFecha_prestamo
-		throw new UnsupportedOperationException();
+
+	public void setFecha_prestamo(int fecha_prestamo) {
+		this.fecha_prestamo = fecha_prestamo;
 	}
 
 	public int getFecha_entrega() {
@@ -24,13 +20,9 @@ public class Prestamo {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param Fecha_entrega
-	 */
-	public void setFecha_entrega(int Fecha_entrega) {
-		// TODO - implement Prestamo.setFecha_entrega
-		throw new UnsupportedOperationException();
+
+	public void setFecha_entrega(int fecha_entrega) {
+		this.fecha_entrega = fecha_entrega;
 	}
 	public Usuario getUsuario() { return usuario; }
 	public void setUsuario(Usuario usuario) { this.usuario = usuario; }

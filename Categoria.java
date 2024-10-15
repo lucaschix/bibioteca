@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Categoria {
@@ -5,6 +6,12 @@ public class Categoria {
 	private String nombre;
 	private String descripcion;
 	private List<Libro> libros;
+	public Categoria(String nombre, String desc) {
+		this.nombre = nombre;
+		this.descripcion=descripcion;
+		this.libros = new ArrayList<>();
+	}
+
 	public String getNombre() {
 		return this.nombre;
 	}
