@@ -3,6 +3,7 @@ public class Empleado {
 	private String nombre;
 	private String identificacion;
 	private String cargo;
+	private Biblioteca biblioteca;
 
 	public String getNombre() {
 		return this.nombre;
@@ -39,5 +40,7 @@ public class Empleado {
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
+	public Biblioteca getBiblioteca() { return biblioteca; }
+	public void setBiblioteca(Biblioteca biblioteca) { this.biblioteca = biblioteca; }
 
 }

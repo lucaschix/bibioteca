@@ -1,8 +1,10 @@
+import java.util.List;
+
 public class Categoria {
 
 	private String nombre;
 	private String descripcion;
-
+	private List<Libro> libros;
 	public String getNombre() {
 		return this.nombre;
 	}
@@ -27,4 +29,7 @@ public class Categoria {
 		this.descripcion = descripcion;
 	}
 
+	public List<Libro> getLibros() { return libros; }
+
+	public void setLibros(List<Libro> libros) { this.libros = libros; }
 }

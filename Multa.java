@@ -3,6 +3,7 @@ public class Multa {
 	private int monto;
 	private int fecha;
 	private String estado;
+	private Prestamo prestamo;
 
 	public int getMonto() {
 		return this.monto;
