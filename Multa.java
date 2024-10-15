@@ -1,14 +1,19 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Multa {
 
 	private int monto;
 	private int fecha;
 	private String estado;
 	private Prestamo prestamo;
+	private List<Multa> multas;
 	public Multa(int monto, Prestamo prestamo, int fecha, String estado) {
 		this.monto = monto;
 		this.prestamo = prestamo;
 		this.fecha= fecha;
 		this.estado=estado;
+		this.multas = new ArrayList<>();
 
 	}
 
@@ -43,6 +48,13 @@ public class Multa {
 	public void pagarMulta(){
 		this.estado="pagada";
 		System.out.println("Multa pagada.");
+
+	}
+	public void eliminar_multa(){
+		if(getEstado().equals("pagada")){
+			multas.remove(this);
+			System.out.println("La multa relacionada con " + getPrestamo()+" por la suma de: "+ getMonto()+" fue eliminada");
+		}
 
 	}
 

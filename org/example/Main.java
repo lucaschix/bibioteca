@@ -31,7 +31,8 @@ public class Main {
         empleado1.setCargo("Portero");
 
         // Eliminar empleado
-        biblioteca.getEmpleados().remove(empleado1);
+        biblioteca.eliminar_empleado(empleado1);
+
 
         // Creamos un prestamo
         Prestamo prestamo1 = new Prestamo();
@@ -43,5 +44,8 @@ public class Main {
         // Creamos una multa
         Multa multa1 = new Multa(20000, prestamo1, 2000, "No pagada");
         multa1.pagarMulta();
+
+        //Eliminamos la multa una vez pagada
+        multa1.eliminar_multa();
     }
 }

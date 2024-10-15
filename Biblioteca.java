@@ -72,6 +72,12 @@ public class Biblioteca {
 		System.out.println("Libro eliminado (el libro fue cambiado de forma ilegal por un trabajador de la ufro a cambio de un completo y una Cristal), nombre del libro: " + libro.getTitulo()); // Assuming Libro class has a getTitulo method
 	}
 
+	public void eliminar_empleado(Empleado empleado){
+		empleados.remove(empleado);
+		System.out.println("Empleado:"+ empleado.getNombre()+ " elimniado exitosamente(Pobre quedo sin pega)");
+
+	}
+
 	public Libro obtenerLibroDisponible(String nombreLibro) {
 		for (Libro libro : libros) {
 			if (libro.getTitulo().equals(nombreLibro)) {
