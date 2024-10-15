@@ -6,9 +6,14 @@ public class Biblioteca {
 
 	private String nombre;
 	private String direccion;
-	private List<Libro> libros;
+	private ArrayList<Libro> libros;
+	private ArrayList<Empleado> empleados;
+	private ArrayList<Categoria> categorias;
+
 	public Biblioteca(){
 		this.libros = new ArrayList<>();
+		this.empleados = new ArrayList<>();
+		this.categorias = new ArrayList<>();
 	}
 	public String getNombre() {
 		return this.nombre;
@@ -16,58 +21,54 @@ public class Biblioteca {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
 	public String getDireccion() {
 		return this.direccion;
 	}
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
-	public List<Libro> getLibros() { return libros; }
-	public void setLibros(List<Libro> libros) { this.libros = libros; }
-
-	public boolean Agregar_libro() {
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Ingresa  titulo, autor, ISBN, genero, cantidad y disponivilidad(true/false) del libro que desea agregar");
-		String titulo = scanner.nextLine();
-		String autor = scanner.nextLine();
-		String ISBN = scanner.nextLine();
-		String año_depublicacion = scanner.nextLine();
-        Libro libro = new Libro(titulo, autor, ISBN,año_depublicacion);
-		this.libros.add(libro);
-		System.out.println("Libro agregado con éxito.");
-		return true;
+	public ArrayList<Libro> getLibros() { return libros; }
+	public void setLibros(ArrayList<Libro> libros) {
+		this.libros = libros;
 	}
-	public void eliminarlibro(){
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Ingresa el tiulo del libro que deseas eliminar");
-		String Titulo = scanner.nextLine();
-		for(Libro libro : this.libros ){
-			if(libro.getTitulo().equals(Titulo)){
-				this.libros.remove(libro);
-				System.out.println("libro eliminado");
-				break;
-			}
-		}
+	public ArrayList<Empleado> getEmpleados() {
+		return empleados;
 	}
-	public void modificar_libro(){
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Ingresa el título del libro que deseas modificar");
-		String titulo = scanner.nextLine();
-		for(Libro libro : this.libros ){
-			if(libro.getTitulo().equals(titulo)){
-				System.out.println("Ingresa el nuevo título,Autor y año de publicacion del libro");
-				String nuevoTitulo = scanner.nextLine();
-				String nuevoAutor = scanner.nextLine();
-				String nuevoAñoDePublicacion = scanner.nextLine();
-				libro.setTitulo(nuevoTitulo);
-				libro.setAutor(nuevoAutor);
-				libro.setAño_de_publicacion(nuevoAñoDePublicacion);
-				System.out.println("Libro modificado con éxito.");
-				break;
-			}
-		}
+	public void setEmpleados(ArrayList<Empleado> empleados) {
+		this.empleados = empleados;
+	}
+	public ArrayList<Categoria> getCategorias() {
+		return categorias;
+	}
+	public void setCategorias(ArrayList<Categoria> categorias) {
+		this.categorias = categorias;
 	}
 
+	public void agregarLibro(Libro libro) {
+		libros.add(libro);
+		System.out.println("Su libro se agrego, este fue: " + libro.getLibros());
+	}
+
+	public void modificarLibro(Libro libro, String nuevoNombre, String nuevoAutor, int nuevoISBN, int nuevoAnio) {
+		libro.setLibro(nuevoNombre);
+		libro.setAutor(nuevoAutor);
+		libro.setISBN(nuevoISBN);
+		libro.setYearPublicacion(nuevoAnio);
+		System.out.println("El libro de modifico, nuevo libro: " + libro.getLibro());
+	}
+
+	public void eliminarLibro(Libro libro) {
+		libros.remove(libro);
+		System.out.println("El libro se uso para el fuego, adios: " + libro.getLibro());
+	}
+
+	public Libro obtenerLibroDisponible(String nombreLibro) {
+		for (Libro libro : libros) {
+			if (libro.getLibro().equals(nombreLibro)) {
+				return libro;
+			}
+		}
+		return null;
+	}
 
 }
