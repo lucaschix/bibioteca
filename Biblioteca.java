@@ -7,9 +7,8 @@ public class Biblioteca {
 	private String nombre;
 	private String direccion;
 	private List<Libro> libros;
-	private List<Libro> nombrevarlista_de_libros;
 	public Biblioteca(){
-		this.nombrevarlista_de_libros = new ArrayList<>();
+		this.libros = new ArrayList<>();
 	}
 	public String getNombre() {
 		return this.nombre;
@@ -35,7 +34,7 @@ public class Biblioteca {
 		String ISBN = scanner.nextLine();
 		String año_depublicacion = scanner.nextLine();
         Libro libro = new Libro(titulo, autor, ISBN,año_depublicacion);
-		this.nombrevarlista_de_libros.add(libro);
+		this.libros.add(libro);
 		System.out.println("Libro agregado con éxito.");
 		return true;
 	}
@@ -43,9 +42,9 @@ public class Biblioteca {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Ingresa el tiulo del libro que deseas eliminar");
 		String Titulo = scanner.nextLine();
-		for(Libro libro : this.nombrevarlista_de_libros ){
+		for(Libro libro : this.libros ){
 			if(libro.getTitulo().equals(Titulo)){
-				this.nombrevarlista_de_libros.remove(libro);
+				this.libros.remove(libro);
 				System.out.println("libro eliminado");
 				break;
 			}
@@ -53,11 +52,19 @@ public class Biblioteca {
 	}
 	public void modificar_libro(){
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Ingresa el tiulo del libro que deseas eliminar");
+		System.out.println("Ingresa el título del libro que deseas modificar");
 		String titulo = scanner.nextLine();
-		for(Libro libro : this.nombrevarlista_de_libros ){
+		for(Libro libro : this.libros ){
 			if(libro.getTitulo().equals(titulo)){
-
+				System.out.println("Ingresa el nuevo título,Autor y año de publicacion del libro");
+				String nuevoTitulo = scanner.nextLine();
+				String nuevoAutor = scanner.nextLine();
+				String nuevoAñoDePublicacion = scanner.nextLine();
+				libro.setTitulo(nuevoTitulo);
+				libro.setAutor(nuevoAutor);
+				libro.setAño_de_publicacion(nuevoAñoDePublicacion);
+				System.out.println("Libro modificado con éxito.");
+				break;
 			}
 		}
 	}

@@ -3,7 +3,7 @@ public class Libro {
 	private String titulo;
 	private String autor;
 	private String ISBN;
-	private int año_de_publicacion;
+	private String año_de_publicacion;
 
 
 	public Libro(String Titulo, String Autor, String ISBN, String año_depublicacion){
@@ -32,10 +32,10 @@ public class Libro {
 
 	public void setISBN(String ISBN) { this.ISBN = ISBN; }
 
-	public int getAño_de_publicacion() {
+	public String getAño_de_publicacion() {
 		return this.año_de_publicacion;
 	}
-	public void setAño_de_publicacion(int año_de_publicacion) {
+	public void setAño_de_publicacion(String año_de_publicacion) {
 		this.año_de_publicacion = año_de_publicacion;
 	}
 	public String toString(){
